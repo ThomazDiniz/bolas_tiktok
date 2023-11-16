@@ -1,0 +1,7 @@
+{
+  "FolderOrderSettings": [],
+  "ResourceOrderSettings": [
+    {"name":"obj_bola","order":1,"path":"objects/obj_bola/obj_bola.yy",},
+    {"name":"rm_bola","order":2,"path":"rooms/rm_bola/rm_bola.yy",},
+  ],
+}
