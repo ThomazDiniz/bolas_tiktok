@@ -15,7 +15,7 @@ if (_dis > raio-r2) {
 	
 	var _novo_ang = _vdir + 180 + angle_difference(180+_dir,_vdir)*2+random_range(-10,10);
 	_vdis*=1.1;
-	r2*=1.1;
+	//r2*=1.1;
 
 	vx = lengthdir_x(_vdis,_novo_ang);
 	vy = lengthdir_y(_vdis,_novo_ang);
@@ -25,8 +25,8 @@ if !surface_exists(surf) {
 	surf = surface_create(room_width,room_height);
 }
 
-if keyboard_check_pressed(ord("R")){
-room_restart();
+if keyboard_check_pressed(ord("R")) {
+	room_restart();
 }
 
 previous_hue = hue;
@@ -37,7 +37,7 @@ surface_set_target(surf);
 	var _color = make_color_hsv(hue,255,255);
 	var _previous_color = make_color_hsv(previous_hue,255,255);
 	draw_set_colour(_color);
-	/*draw_primitive_begin(pr_trianglestrip);
+	draw_primitive_begin(pr_trianglestrip);
 		var _lx = lengthdir_x(r2,_vdir-90);
 		var _ly = lengthdir_y(r2,_vdir-90);
 		
@@ -46,7 +46,7 @@ surface_set_target(surf);
 		draw_vertex_colour(xxp+_lx,yyp+_ly,_previous_color,1);
 		draw_vertex_colour(xxp-_lx,yyp-_ly,_previous_color,1);
 	draw_primitive_end();
-	*/
+	
 	draw_circle(xx,yy,r2,0);
 surface_reset_target();
 
@@ -54,4 +54,3 @@ draw_surface(surf,0,0);
 draw_set_colour(c_white);
 draw_circle(x,y,raio,1);
 	draw_circle(xx,yy,r2,0);
-
