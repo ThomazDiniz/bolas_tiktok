@@ -19,10 +19,31 @@ pitches_index = 0;
 
 randomize();
 
+function change_bola(){
+	if ++global.tipo_de_bola > tipo_de_bola_enum.sprite_1{
+		global.tipo_de_bola = 0;
+	}
+}	
 
+function change_limites(){
+	if ++global.tipo_de_limite > tipo_de_limites_enum.retangulo{
+		global.tipo_de_limite = 0;
+	}
+}	
+
+function change_rastro(){
+	if ++global.tipo_de_rastro > tipo_de_rastro_enum.rastro_pintado{
+		global.tipo_de_rastro = 0;
+	}
+}	
+function change_comportamento(){
+	if ++global.tipo_de_comportamento > comportamento_de_bola_enum.cresce {
+		global.tipo_de_comportamento = 0;
+	}
+}	
 
 enum tipo_de_bola_enum {
-	bola,sprite_0,sprite_1,sprite_2,sprite_3
+	bola,sprite_0,sprite_1
 }
 
 enum comportamento_de_bola_enum {
@@ -37,15 +58,11 @@ enum tipo_de_rastro_enum {
 	proprio_desenho_pintado,proprio_desenho,rastro_pintado
 }
 
-tipo_de_bola = tipo_de_bola_enum.sprite_1;
-tipo_de_limite = tipo_de_limites_enum.circulo;
-tipo_de_rastro = tipo_de_rastro_enum.proprio_desenho_pintado;
-tipo_de_comportamento = comportamento_de_bola_enum.cresce;
 
 
 function desenha_proprio_desenho_pintado(_color = c_white){
 	draw_set_colour(_color);
-	switch(tipo_de_bola){
+	switch(global.tipo_de_bola){
 		case tipo_de_bola_enum.bola:
 			draw_circle(xx,yy,r2*scale,0);
 		break;
@@ -53,11 +70,8 @@ function desenha_proprio_desenho_pintado(_color = c_white){
 		case tipo_de_bola_enum.sprite_0:
 			draw_sprite_ext(spr_bola,0,xx,yy,scale,scale,image_angle,_color,1);
 		break;
-		case tipo_de_bola_enum.sprite_2:
-			draw_sprite_ext(spr_bola,2,xx,yy,scale,scale,image_angle,_color,1);
-		break;
-		case tipo_de_bola_enum.sprite_3:
-			draw_sprite_ext(spr_bola,3,xx,yy,scale,scale,image_angle,image_blend,1);
+		case tipo_de_bola_enum.sprite_1:
+			draw_sprite_ext(spr_bola,0,xx,yy,scale,scale,image_angle,_color,1);
 		break;
 	}
 }
