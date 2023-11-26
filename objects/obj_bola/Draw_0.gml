@@ -17,7 +17,7 @@ var _h = sprite_get_height(spr_bola)*scale/2;
 #region Colisão
 
 	var _colidiu = 0;
-	switch(tipo_de_limite){
+	switch(global.tipo_de_limite){
 		case tipo_de_limites_enum.circulo:
 			if (_dis > raio-_r2*scale*.1) { 
 				var _novo_ang = _vdir + 180 + angle_difference(180+_dir,_vdir)*2;
@@ -52,7 +52,7 @@ var _h = sprite_get_height(spr_bola)*scale/2;
 		if pitches_index >= array_length(pitches){
 			pitches_index = 0;
 		}
-		switch(tipo_de_comportamento){
+		switch(global.tipo_de_comportamento){
 			case comportamento_de_bola_enum.nada:
 			break;
 		
@@ -71,7 +71,7 @@ var _h = sprite_get_height(spr_bola)*scale/2;
 				scale*=1.1;
 			break;
 		}
-		switch(tipo_de_limite){
+		switch(global.tipo_de_limite){
 			case tipo_de_limites_enum.retangulo:
 				_w = sprite_get_width(spr_bola)*scale/2;
 				_h = sprite_get_height(spr_bola)*scale/2;
@@ -96,6 +96,22 @@ if keyboard_check_pressed(ord("R")) {
 	room_restart();
 }
 
+if keyboard_check_pressed(vk_up) {
+	change_bola();
+}
+
+if keyboard_check_pressed(vk_down) {
+	change_comportamento();
+}
+
+if keyboard_check_pressed(vk_left) {
+	change_rastro();
+}
+
+if keyboard_check_pressed(vk_right) {
+	change_limites();
+}
+
 previous_hue = hue;
 if (hue++>255){
 	hue = 0;
@@ -105,7 +121,7 @@ surface_set_target(surf);
 	var _previous_color = make_color_hsv(previous_hue,255,255);
 	draw_set_colour(_color);
 	image_blend = _color;
-	switch(tipo_de_rastro){
+	switch(global.tipo_de_rastro){
 		case tipo_de_rastro_enum.proprio_desenho:
 			desenha_proprio_desenho_pintado();
 		break;
