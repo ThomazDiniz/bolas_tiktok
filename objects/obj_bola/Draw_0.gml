@@ -1,4 +1,4 @@
-if (global.pause) {
+if (!global.pause) {
 	vy+=.45;
 	xxp = xx;
 	yyp = yy;
@@ -29,7 +29,7 @@ var _h = sprite_get_height(spr_bola)*scale/2;
 				vy = lengthdir_y(_vdis,_novo_ang);
 			}
 			draw_set_colour(c_white);
-				draw_circle(x,y,raio,1);
+				draw_circle(x,y,raio-1,1);
 		break;
 		
 		case tipo_de_limites_enum.retangulo:
@@ -100,7 +100,7 @@ if keyboard_check_pressed(vk_up)	{change_bola();}
 if keyboard_check_pressed(vk_down)	{change_comportamento();}
 if keyboard_check_pressed(vk_left)	{change_rastro();}
 if keyboard_check_pressed(vk_right)	{change_limites();}
-if keyboard_check_pressed(vk_pause)	{global.pause = !global.pause;}
+if keyboard_check_pressed(vk_space)	{global.pause = !global.pause;}
 
 previous_hue = hue;
 if (hue++>255){
@@ -132,6 +132,29 @@ surface_set_target(surf);
 			draw_primitive_end();
 		break;
 	}
+surface_reset_target();
+
+if !surface_exists(surf_limite){
+	surf_limite = surface_create(room_width,room_height);
+}
+surface_set_target(surf_limite);
+draw_clear(c_black);
+draw_set_color(c_white);
+	switch(global.tipo_de_limite){
+		case tipo_de_limites_enum.circulo:
+			draw_circle(x,y,raio,0);
+		break;
+			
+		case tipo_de_limites_enum.retangulo:
+			draw_rectangle(x-w,y-h,x+w,y+h,0);
+		break;
+	}
+surface_reset_target();
+
+surface_set_target(surf);
+	gpu_set_blendmode_ext(bm_dest_color, bm_zero);
+	draw_surface(surf_limite,0,surf_limite);
+	gpu_set_blendmode(bm_normal);
 surface_reset_target();
 
 draw_surface(surf,0,0);
