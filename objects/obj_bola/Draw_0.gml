@@ -1,8 +1,11 @@
-vy+=.45;
-xxp = xx;
-yyp = yy;
-xx+=vx;
-yy+=vy;
+if (global.pause) {
+	vy+=.45;
+	xxp = xx;
+	yyp = yy;
+	xx+=vx;
+	yy+=vy;
+}
+
 
 var _dis = point_distance(xx,yy,x,y);
 var _dir = point_direction(x,y,xx,yy);
@@ -92,25 +95,12 @@ if !surface_exists(surf) {
 	surf = surface_create(room_width,room_height);
 }
 
-if keyboard_check_pressed(ord("R")) {
-	room_restart();
-}
-
-if keyboard_check_pressed(vk_up) {
-	change_bola();
-}
-
-if keyboard_check_pressed(vk_down) {
-	change_comportamento();
-}
-
-if keyboard_check_pressed(vk_left) {
-	change_rastro();
-}
-
-if keyboard_check_pressed(vk_right) {
-	change_limites();
-}
+if keyboard_check_pressed(ord("R"))	{room_restart();}
+if keyboard_check_pressed(vk_up)	{change_bola();}
+if keyboard_check_pressed(vk_down)	{change_comportamento();}
+if keyboard_check_pressed(vk_left)	{change_rastro();}
+if keyboard_check_pressed(vk_right)	{change_limites();}
+if keyboard_check_pressed(vk_pause)	{global.pause = !global.pause;}
 
 previous_hue = hue;
 if (hue++>255){
@@ -147,3 +137,12 @@ surface_reset_target();
 draw_surface(surf,0,0);
 
 desenha_proprio_desenho_pintado(c_white);
+
+draw_text(10,10,
+			string("Bola: {0}\nComportamento:{1}\nlimite:{2}\nrastro:{3}",
+				tipo_de_bola_str[global.tipo_de_bola],
+				comportamento_de_bola_str[global.tipo_de_comportamento],
+				tipo_de_limites_str[global.tipo_de_limite],
+				tipo_de_rastro_str[global.tipo_de_rastro]
+			)
+		);

@@ -46,18 +46,22 @@ enum tipo_de_bola_enum {
 	bola,sprite_0,sprite_1
 }
 
+tipo_de_bola_str = ["bola","sprite_0","sprite_1"];
+
 enum comportamento_de_bola_enum {
 	nada,cresce,acelera,cresce_e_acelera
 }
+comportamento_de_bola_str = ["nada","cresce","acelera","cresce_e_acelera"];
 
 enum tipo_de_limites_enum {
 	circulo,retangulo
 }
+tipo_de_limites_str = ["circulo","retangulo"];
 
 enum tipo_de_rastro_enum {
 	proprio_desenho_pintado,proprio_desenho,rastro_pintado
 }
-
+tipo_de_rastro_str = ["proprio_desenho_pintado","proprio_desenho","rastro_pintado"];
 
 
 function desenha_proprio_desenho_pintado(_color = c_white){

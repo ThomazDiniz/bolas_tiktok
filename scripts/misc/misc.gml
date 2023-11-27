@@ -21,7 +21,8 @@ function sound_play(_snd,_vol=1,_pitch=1,_multiple=1,_loops=0,_priority=1){
 }
 
 
-global.tipo_de_bola = tipo_de_bola_enum.bola;
-global.tipo_de_limite = tipo_de_limites_enum.circulo;
-global.tipo_de_rastro = tipo_de_rastro_enum.proprio_desenho_pintado;
-global.tipo_de_comportamento = comportamento_de_bola_enum.cresce;
+global.tipo_de_bola				= 0;
+global.tipo_de_limite			= 0;
+global.tipo_de_rastro			= 0;
+global.tipo_de_comportamento	= 0;
+global.pause = 0;

@@ -24,6 +24,7 @@
     {"id":{"name":"sfx_piano_nota","path":"sounds/sfx_piano_nota/sfx_piano_nota.yy",},},
     {"id":{"name":"sfx_neyma","path":"sounds/sfx_neyma/sfx_neyma.yy",},},
     {"id":{"name":"misc","path":"scripts/misc/misc.yy",},},
+    {"id":{"name":"messi","path":"sounds/messi/messi.yy",},},
     {"id":{"name":"rm_bola","path":"rooms/rm_bola/rm_bola.yy",},},
   ],
   "RoomOrderNodes": [

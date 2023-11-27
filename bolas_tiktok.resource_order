@@ -7,6 +7,7 @@
     {"name":"sfx_piano_nota","order":4,"path":"sounds/sfx_piano_nota/sfx_piano_nota.yy",},
     {"name":"sfx_neyma","order":7,"path":"sounds/sfx_neyma/sfx_neyma.yy",},
     {"name":"misc","order":5,"path":"scripts/misc/misc.yy",},
+    {"name":"messi","order":8,"path":"sounds/messi/messi.yy",},
     {"name":"rm_bola","order":2,"path":"rooms/rm_bola/rm_bola.yy",},
   ],
 }
