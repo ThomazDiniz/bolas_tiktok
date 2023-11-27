@@ -1,4 +1,5 @@
 surf = -1;
+surf_limite = -1;
 raio = 256;
 x = room_width/2;
 y = room_height/2;
@@ -37,7 +38,7 @@ function change_rastro(){
 	}
 }	
 function change_comportamento(){
-	if ++global.tipo_de_comportamento > comportamento_de_bola_enum.cresce {
+	if ++global.tipo_de_comportamento > comportamento_de_bola_enum.cresce_e_acelera {
 		global.tipo_de_comportamento = 0;
 	}
 }	
@@ -79,3 +80,4 @@ function desenha_proprio_desenho_pintado(_color = c_white){
 		break;
 	}
 }
+draw_set_circle_precision(64);
