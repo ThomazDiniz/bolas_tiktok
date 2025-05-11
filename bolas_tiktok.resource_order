@@ -1,13 +1,17 @@
 {
-  "FolderOrderSettings": [],
-  "ResourceOrderSettings": [
+  "FolderOrderSettings":[],
+  "ResourceOrderSettings":[
+    {"name":"fnt","order":11,"path":"fonts/fnt/fnt.yy",},
     {"name":"obj_bola","order":1,"path":"objects/obj_bola/obj_bola.yy",},
-    {"name":"spr_bola","order":6,"path":"sprites/spr_bola/spr_bola.yy",},
-    {"name":"sfx_batida","order":3,"path":"sounds/sfx_batida/sfx_batida.yy",},
-    {"name":"sfx_piano_nota","order":4,"path":"sounds/sfx_piano_nota/sfx_piano_nota.yy",},
-    {"name":"sfx_neyma","order":7,"path":"sounds/sfx_neyma/sfx_neyma.yy",},
+    {"name":"obj_botao","order":10,"path":"objects/obj_botao/obj_botao.yy",},
+    {"name":"rm_bola","order":2,"path":"rooms/rm_bola/rm_bola.yy",},
     {"name":"misc","order":5,"path":"scripts/misc/misc.yy",},
     {"name":"messi","order":8,"path":"sounds/messi/messi.yy",},
-    {"name":"rm_bola","order":2,"path":"rooms/rm_bola/rm_bola.yy",},
+    {"name":"sfx_batida","order":3,"path":"sounds/sfx_batida/sfx_batida.yy",},
+    {"name":"sfx_neyma","order":7,"path":"sounds/sfx_neyma/sfx_neyma.yy",},
+    {"name":"sfx_piano_nota","order":4,"path":"sounds/sfx_piano_nota/sfx_piano_nota.yy",},
+    {"name":"spr_bola","order":6,"path":"sprites/spr_bola/spr_bola.yy",},
+    {"name":"spr_botao","order":9,"path":"sprites/spr_botao/spr_botao.yy",},
+    {"name":"Sprite3","order":12,"path":"sprites/Sprite3/Sprite3.yy",},
   ],
 }

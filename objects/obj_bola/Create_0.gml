@@ -12,6 +12,8 @@ r2 = 8;
 scale = 1;
 w = 128;
 h = 256;
+xxp = xx;
+yyp = yy;
 
 previous_hue = 0;
 hue = 0;
@@ -20,39 +22,17 @@ pitches_index = 0;
 
 randomize();
 
-function change_bola(){
-	if ++global.tipo_de_bola > tipo_de_bola_enum.sprite_1{
-		global.tipo_de_bola = 0;
-	}
-}	
-
-function change_limites(){
-	if ++global.tipo_de_limite > tipo_de_limites_enum.retangulo{
-		global.tipo_de_limite = 0;
-	}
-}	
-
-function change_rastro(){
-	if ++global.tipo_de_rastro > tipo_de_rastro_enum.rastro_pintado{
-		global.tipo_de_rastro = 0;
-	}
-}	
-function change_comportamento(){
-	if ++global.tipo_de_comportamento > comportamento_de_bola_enum.cresce_e_acelera {
-		global.tipo_de_comportamento = 0;
-	}
-}	
 
 enum tipo_de_bola_enum {
-	bola,sprite_0,sprite_1
+	bola,sprite_0,sprite_1,sprite_s
 }
 
-tipo_de_bola_str = ["bola","sprite_0","sprite_1"];
+tipo_de_bola_str = ["bola","sprite_0","sprite_1","importado"];
 
 enum comportamento_de_bola_enum {
 	nada,cresce,acelera,cresce_e_acelera
 }
-comportamento_de_bola_str = ["nada","cresce","acelera","cresce_e_acelera"];
+comportamento_de_bola_str = ["nada","cresce","acelera","cresce_acelera"];
 
 enum tipo_de_limites_enum {
 	circulo,retangulo
@@ -62,7 +42,7 @@ tipo_de_limites_str = ["circulo","retangulo"];
 enum tipo_de_rastro_enum {
 	proprio_desenho_pintado,proprio_desenho,rastro_pintado
 }
-tipo_de_rastro_str = ["proprio_desenho_pintado","proprio_desenho","rastro_pintado"];
+tipo_de_rastro_str = ["desenho_pintado","desenho","rastro_pintado"];
 
 
 function desenha_proprio_desenho_pintado(_color = c_white){
@@ -75,9 +55,23 @@ function desenha_proprio_desenho_pintado(_color = c_white){
 		case tipo_de_bola_enum.sprite_0:
 			draw_sprite_ext(spr_bola,0,xx,yy,scale,scale,image_angle,_color,1);
 		break;
+		
 		case tipo_de_bola_enum.sprite_1:
-			draw_sprite_ext(spr_bola,0,xx,yy,scale,scale,image_angle,_color,1);
+			draw_sprite_ext(spr_bola,1,xx,yy,scale,scale,image_angle,_color,1);
+		break;
+		
+		case tipo_de_bola_enum.sprite_s:
+			draw_sprite_ext(global.spr,0,xx,yy,scale*global.special_scale,scale*global.special_scale,image_angle,_color,1);
 		break;
 	}
 }
 draw_set_circle_precision(64);
+
+
+rmx = mouse_x;
+rmy = mouse_x;
+
+colors = [c_black,c_white];
+bg_color = 0;
+draw_set_font(fnt);
+

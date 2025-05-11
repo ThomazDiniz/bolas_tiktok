@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "misc",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "bolas_tiktok",
-    "path": "bolas_tiktok.yyp",
+  "$GMScript":"v1",
+  "%Name":"misc",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"misc",
+  "parent":{
+    "name":"bolas_tiktok",
+    "path":"bolas_tiktok.yyp",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }
